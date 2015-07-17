@@ -17,6 +17,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    CGRect fullScreenBounds = [[UIScreen mainScreen] bounds];
+    MKMapView *mapView = [[MKMapView alloc] initWithFrame:CGRectMake(0, 0, fullScreenBounds.size.width, fullScreenBounds.size.height)];
+    [self.view addSubview:mapView];
+    
+    NSLog(@"%@", NSStringFromCGRect(mapView.bounds));
 }
 
 - (void)didReceiveMemoryWarning {
