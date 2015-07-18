@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>F473C5B9-E73F-4DC2-B01E-4EB0017D48CD</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Map Kit Test</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>1AB820FCD3E3DA0A8C18FAD537D4029E22646184</key>
+		<string>github.com:pkprosol/ObjectiveC_Uber_Unit4_MapKitBasicApp.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Map Kit Test.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>1AB820FCD3E3DA0A8C18FAD537D4029E22646184</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:pkprosol/ObjectiveC_Uber_Unit4_MapKitBasicApp.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>1AB820FCD3E3DA0A8C18FAD537D4029E22646184</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>1AB820FCD3E3DA0A8C18FAD537D4029E22646184</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Map%20Kit%20Test</string>
+		</dict>
+	</array>
+</dict>
+</plist>
