@@ -14,6 +14,10 @@
 
 @implementation ViewController
 
+NSString *const kNewYorkTitle = @"New York City";
+NSString *const kBostonTitle = @"Boston";
+NSString *const kDCTitle = @"Washington D.C.";
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
@@ -48,12 +52,18 @@
     CLLocationCoordinate2D dcCoordinate = CLLocationCoordinate2DMake(38.888930, -77.027307);
     
     MKPointAnnotation *bostonPoint = [[MKPointAnnotation alloc] init];
+    bostonPoint.title = kBostonTitle;
+    bostonPoint.subtitle = @"Population: 646,000";
     bostonPoint.coordinate = bostonCoordinate;
     
     MKPointAnnotation *newYorkPoint = [[MKPointAnnotation alloc] init];
+    newYorkPoint.title = kNewYorkTitle;
+    newYorkPoint.subtitle = @"Population: 8,400,000";
     newYorkPoint.coordinate = newYorkCoordinate;
     
     MKPointAnnotation *dcPoint = [[MKPointAnnotation alloc] init];
+    dcPoint.title = kDCTitle;
+    dcPoint.subtitle = @"Population: 659,000";
     dcPoint.coordinate = dcCoordinate;
     
     return @[bostonPoint, newYorkPoint, dcPoint];
@@ -78,6 +88,51 @@
     MKPointAnnotation *pointTouched = [[MKPointAnnotation alloc] init];
     pointTouched.coordinate = touchedCoordinate;
     [self.mapView addAnnotation:pointTouched];
+}
+
+#pragma mark MKMapViewDelegate
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
+{
+    // If it's the user location, just return nil.
+    if ([annotation isKindOfClass:[MKUserLocation class]]) {
+        return nil;
+    }
+    
+    // Handle any custom annotations.
+    if ([annotation isKindOfClass:[MKPointAnnotation class]])
+    {
+        // Try to dequeue an existing pin view first.
+        MKPinAnnotationView *pinView = (MKPinAnnotationView *) [mapView dequeueReusableAnnotationViewWithIdentifier:@"CustomPinAnnotationView"];
+        if (!pinView)
+        {
+            // If an existing pin view was not available, create one.
+            pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"CustomPinAnnotationView"];
+            // 4. Customize the pin!
+            pinView.pinColor = MKPinAnnotationColorPurple;
+            pinView.canShowCallout = YES;
+            //Customize the callout
+            UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+            pinView.rightCalloutAccessoryView = rightButton;
+        } else {
+            pinView.annotation = annotation;
+        }
+        return pinView;
+    }
+    return nil;
+}
+-(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
+    id <MKAnnotation> annotation = [view annotation];
+    if ([annotation isKindOfClass:[MKPointAnnotation class]]) {
+        MKPointAnnotation *pointAnnotation = annotation;
+        if ([pointAnnotation.title isEqualToString:kNewYorkTitle]) {
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"https://en.wikipedia.org/wiki/New_York_City"]];
+        } else if ([pointAnnotation.title isEqualToString:kBostonTitle]) {
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"https://en.wikipedia.org/wiki/Boston"]];
+        } else if ([pointAnnotation.title isEqualToString:kDCTitle]) {
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"https://en.wikipedia.org/wiki/Washington,_D.C."]];
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning {

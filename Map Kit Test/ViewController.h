@@ -11,7 +11,6 @@
 
 @interface ViewController : UIViewController <MKMapViewDelegate>
 
-@property (strong, nonatomic) NSArray *citiesArray;
 @property (strong, nonatomic) MKMapView *mapView;
 
 @end
