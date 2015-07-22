@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface ViewController : UIViewController <MKMapViewDelegate>
+@interface ViewController : UIViewController <MKMapViewDelegate,CLLocationManagerDelegate>
 
-@property (strong, nonatomic) NSArray *citiesArray;
 @property (strong, nonatomic) MKMapView *mapView;
-
+@property (strong, nonatomic) CLLocationManager *locationManager;
+@property (strong, nonatomic) MKPointAnnotation *pointHere;
 @end
 

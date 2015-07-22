@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		183431C91B604BA300F1CD2E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 183431C81B604BA300F1CD2E /* CoreLocation.framework */; };
 		F451170A1B588D5900C2C01E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F45117091B588D5900C2C01E /* main.m */; };
 		F451170D1B588D5900C2C01E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F451170C1B588D5900C2C01E /* AppDelegate.m */; };
 		F45117101B588D5900C2C01E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F451170F1B588D5900C2C01E /* ViewController.m */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		183431C81B604BA300F1CD2E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		F45117041B588D5900C2C01E /* Map Kit Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Map Kit Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F45117081B588D5900C2C01E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F45117091B588D5900C2C01E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -47,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				183431C91B604BA300F1CD2E /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +66,7 @@
 		F45116FB1B588D5900C2C01E = {
 			isa = PBXGroup;
 			children = (
+				183431C81B604BA300F1CD2E /* CoreLocation.framework */,
 				F45117061B588D5900C2C01E /* Map Kit Test */,
 				F45117201B588D5900C2C01E /* Map Kit TestTests */,
 				F45117051B588D5900C2C01E /* Products */,
@@ -416,6 +420,7 @@
 				F45117291B588D5900C2C01E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F451172A1B588D5900C2C01E /* Build configuration list for PBXNativeTarget "Map Kit TestTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +429,7 @@
 				F451172C1B588D5900C2C01E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
