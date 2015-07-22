@@ -83,13 +83,18 @@ NSString *const kDCTitle = @"Washington D.C.";
 }
                                                                                                                                     
 - (void)dropPinAtUserTouch:(UIGestureRecognizer *)gestureRecognizer {
-    CGPoint locationTouched = [gestureRecognizer locationInView:self.mapView];
-    CLLocationCoordinate2D touchedCoordinate = [self.mapView convertPoint:locationTouched toCoordinateFromView:self.mapView];
-    MKPointAnnotation *pointTouched = [[MKPointAnnotation alloc] init];
-    pointTouched.coordinate = touchedCoordinate;
-    [self.mapView addAnnotation:pointTouched];
+    //only add a pin when the long touch begins
+    if (gestureRecognizer.state == UIGestureRecognizerStateBegan) {
+        //Get location of touch
+        CGPoint locationTouched = [gestureRecognizer locationInView:self.mapView];
+        //Get coordinate of touch
+        CLLocationCoordinate2D touchedCoordinate = [self.mapView convertPoint:locationTouched toCoordinateFromView:self.mapView];
+        //Create a pin
+        MKPointAnnotation *pointTouched = [[MKPointAnnotation alloc] init];
+        pointTouched.coordinate = touchedCoordinate;
+        [self.mapView addAnnotation:pointTouched];
+    }
 }
-
 #pragma mark MKMapViewDelegate
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
